@@ -23,8 +23,12 @@ fun main() {
     }
 
     // test if implementation meets criteria from the description, like:
-    val testInput = File("src/Day01_test.txt").readText()
-//    check(part1(testInput) == 24000)
+    val filename =
+        "src/Day01_sample.txt"
+//    "src/Day01_quiz.txt"
+    val testInput = File(filename).readText()
+    val result = part1(testInput)
+    check(result == 24000)
 
 //    val input = readInput("Day01")
     part1(testInput).println()
