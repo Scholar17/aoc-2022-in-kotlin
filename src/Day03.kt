@@ -11,16 +11,24 @@ fun main() {
 
 
     val filename =
-//        "src/Day03.sample.txt"
-        "src/Day03_quiz.txt"
+        "src/Day03_sample.txt"
+//        "src/Day03_quiz.txt"
     val textInput = File(filename).readText()
     val nestedIntList = parseInput(textInput)
+    println(nestedIntList)
 
     fun maxCounter(input: List<Int>): Int {
         return input
             .groupingBy { it }
             .eachCount()
             .maxBy { it.value }.key
+    }
+
+    fun maxCounterValue(input: List<Int>): Int {
+        return input
+            .groupingBy { it }
+            .eachCount()
+            .maxBy { it.value }.value
     }
 
     fun minCounter(input: List<Int>): Int {
@@ -41,12 +49,15 @@ fun main() {
 
     val gammaRate = mutableListOf<Int>()
     val epsilonRate = mutableListOf<Int>()
+    val test = mutableListOf<Int>()
 
     for (aList in filterTotalResult) {
         gammaRate.add(maxCounter(aList))
         epsilonRate.add(minCounter(aList))
+        test.add(maxCounterValue(aList))
     }
 
+    println(test)
     var gammaRateInString = ""
     var epsilonRateInString = ""
 
