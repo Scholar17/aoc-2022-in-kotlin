@@ -1,4 +1,4 @@
-enum class Score(val representer: String, val value: Int) {
+enum class EnumValue(val representer: String, val value: Int) {
     OpponentRock("A",1),
     OpponentPaper("B",2),
     OpponentScissors("C",3),
